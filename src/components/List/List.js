@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import ListItem from '../ListItem/ListItem';
 
-class MyComponent extends Component {
+class List extends Component {
   render() {
-    const items = [1, 2, 3];
+    const list = [1, 2, 3];
     return (
       <div>
-        <ListItem />
+        {list.map((item, index) => <ListItem item={item} key={index + item} />)}
       </div>
     );
   }
 }
 
-MyComponent.propTypes = {
-  list: PropTypes.array,
-};
-
-export default MyComponent;
+export default List;
